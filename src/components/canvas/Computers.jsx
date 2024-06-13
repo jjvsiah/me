@@ -8,16 +8,19 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
+      {/* Enhanced ambient lighting for overall brightness */}
+      <ambientLight intensity={0.4} />
+      {/* Hemisphere light for soft light from above */}
+      <hemisphereLight skyColor={"#ffffff"} groundColor="#b1e1ff" intensity={0.5} />
+      {/* Directional light for more dynamic shading and highlights */}
+      <directionalLight
+        position={[10, 10, 5]}
+        intensity={1.5}
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
       />
-      <pointLight intensity={1} />
+      <pointLight position={[0, 5, 10]} intensity={1} />  // Adjusted for better frontal lighting
       <primitive
         object={computer.scene}
         scale={isMobile ? 2.4 : 2.5} // Increased scale for better visibility
@@ -39,16 +42,16 @@ const ComputersCanvas = () => {
     setIsMobile(mediaQuery.matches);
 
     // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
+    const handleMediaQueryHeight = (event) => {
       setIsMobile(event.matches);
     };
 
     // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    mediaQuery.addEventListener("change", handleMediaQueryHeight);
 
     // Remove the listener when the component is unmounted
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      mediaQuery.removeEventListener("change", handleMediaQueryHeight);
     };
   }, []);
 
