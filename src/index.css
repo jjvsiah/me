@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+/* Gradients */
+.black-gradient {
+  background: #fcb0d1; /* Light pink */
+  background: linear-gradient(to right, #fcb0d1, #f8c0d4); /* Pastel pink gradient */
+}
+
+.violet-gradient {
+  background: #a2cfff; /* Light blue */
+  background: linear-gradient(-90deg, #a2cfff 0%, rgba(162, 207, 255, 0) 100%);
+}
+
+.green-pink-gradient {
+  background: linear-gradient(90.13deg, #b7eaff 1.9%, #fec3a6 97.5%); /* Sky blue to light peach */
+}
+
+/* Text Gradients */
+.orange-text-gradient {
+  background: #ffecd2; /* Light yellow */
+  background: linear-gradient(to top, #ffecd2, #fcb69f); /* From peach to light orange */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-text-gradient {
+  background: #b4f8c8; /* Light green */
+  background: linear-gradient(to top, #b4f8c8, #faffd1); /* Light green to pastel yellow */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blue-text-gradient {
+  background: #cae9ff; /* Light blue */
+  background: linear-gradient(to top, #cae9ff, #fbcfe8); /* Light blue to light pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-text-gradient {
+  background: #ffdede; /* Light pink */
+  background: linear-gradient(to top, #ffdede, #ffb6b9); /* Light pink to lighter pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Loader style */
+.canvas-loader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%, 100% {
+    box-shadow: 0em -2.6em 0em 0em #ffdede, 1.8em -1.8em 0 0em rgba(255, 214, 222, 0.7);
+    /* Additional shadow entries omitted for brevity */
+  }
+  /* Additional keyframes omitted for brevity */
+}
