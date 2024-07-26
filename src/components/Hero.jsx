@@ -18,14 +18,18 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className='text-[#915EFF]'>Jasiah</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I create pixel-perfect, engaging and accessible <br className='sm:block hidden' />
-            interfaces and web applications
+          <p className={`${styles.heroSubText} mt-2 text-gray-700`}>
+            Currently studying CS @ UNSW <br/>
+            and working at a startup building an app to connect athletes <br/>
+            On the side I enjoy learning new languages and creating projects <br/>
+            Practicing writing code which is scalable and human-friendly ⭐️
+
           </p>
         </div>
+      <ComputersCanvas />
+
       </div>
 
-      <ComputersCanvas />
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>

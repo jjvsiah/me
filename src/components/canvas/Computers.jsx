@@ -8,11 +8,8 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      {/* Enhanced ambient lighting for overall brightness */}
       <ambientLight intensity={0.4} />
-      {/* Hemisphere light for soft light from above */}
       <hemisphereLight skyColor={"#ffffff"} groundColor="#b1e1ff" intensity={0.5} />
-      {/* Directional light for more dynamic shading and highlights */}
       <directionalLight
         position={[10, 10, 5]}
         intensity={1.5}
@@ -20,12 +17,12 @@ const Computers = ({ isMobile }) => {
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
       />
-      <pointLight position={[0, 5, 10]} intensity={1} />  // Adjusted for better frontal lighting
+      <pointLight position={[0, 5, 10]} intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 2.4 : 2.5} // Increased scale for better visibility
+        scale={isMobile ? 2.2 : 2.5}
         position={isMobile ? [0, -1.5, -1.2] : [0, -1, -1]}
-        rotation={[-0.01, -0.2, 0]} // Adjust rotation if necessary
+        rotation={[-0.01, -0.2, 0]}
       />
     </mesh>
   );
@@ -35,23 +32,18 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryHeight = (event) => {
+    const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryHeight);
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Remove the listener when the component is unmounted
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryHeight);
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
 
@@ -67,7 +59,7 @@ const ComputersCanvas = () => {
         <OrbitControls
           autoRotate
           enableZoom={false}
-          autoRotateSpeed={1.5} // Enable and adjust auto-rotation speed
+          autoRotateSpeed={1.5}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />

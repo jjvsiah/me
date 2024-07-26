@@ -40,19 +40,20 @@ const About = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>Little more of me 🌱</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='text-white mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
       
-        I'm a penultimate year Computer Science student at UNSW. I studied 
-        Computational Design for two years but was drawn to a more technical side
-        I am always eager to learn and work on new projects!
+        I've really been enjoying creating 
+        full-stack projects in ReactJS on the side. At work I started off using Laravel and VueJS!
+        Checkout my github for up to date projects, I'll usually deploy them if I can.
+        Besides programming, work and uni, I was a competitive bodybuilder for 2 years with ICN and IFBB and 
+        still very much love the gym, womens health and biomechanics! 
 
-      
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

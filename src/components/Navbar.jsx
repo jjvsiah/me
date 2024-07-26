@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
+
+
+const GithubIcon = styled(FontAwesomeIcon)`
+  color: white;
+  height: 30px;
+  width: 30px;
+`;
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -61,6 +70,12 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+        </ul>
+
+        <ul className='list-none hidden sm:flex flex-row gap-2'>
+          <a href="https://github.com/jjvsiah" target="_blank" rel="noopener noreferrer">
+            <GithubIcon icon={faGithub} />
+          </a>
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
