@@ -1,5 +1,5 @@
 /**
- * Code by Adrian Hajdin
+ * @author Adrian Hajdin + Jasiah Haque
  */
 import { BrowserRouter } from "react-router-dom";
 
